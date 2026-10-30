@@ -1,0 +1,1 @@
+{"name":"boardmaster-750","private":true,"version":"1.0.0","description":"보드마스터 750 반응형 제품 소개 사이트","scripts":{"dev":"node server.mjs","check":"node --check server.mjs && node --check dist/app.js && node --check dist/config.js"}}
