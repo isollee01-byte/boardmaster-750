@@ -3,9 +3,7 @@
 .footer-business>strong{display:block;margin-bottom:10px}
 .footer-roles{margin-top:16px;padding-top:12px;border-top:1px solid #392d3f}
 .footer-bottom>span{white-space:nowrap}
-.brand-logo{display:block;width:225px;height:auto;object-fit:contain}
-@media(max-width:950px){.brand-logo{width:195px}}
-@media(max-width:600px){.brand-logo{width:200px;max-width:calc(100vw - 110px)}}
+.brand,.brand strong,.brand small{background:transparent}
 .kakao-floating{position:fixed;right:24px;bottom:28px;z-index:40}
 .kakao-chat-button{display:flex;align-items:center;gap:10px;min-height:64px;padding:11px 20px 11px 14px;border:1px solid #e7d000;border-radius:32px;background:#fee500;color:#3c1e1e;box-shadow:0 5px 22px #231b2526;text-align:left;transition:transform .2s,box-shadow .2s}
 .kakao-chat-button:hover{transform:translateY(-3px);box-shadow:0 8px 26px #231b2533}
