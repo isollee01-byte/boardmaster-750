@@ -1,4 +1,8 @@
 node_modules/
+.tools/
+tmp/pdf-tools/
+tmp/
+output/
 .sites-local/
 *.tar.gz
 *.tgz
