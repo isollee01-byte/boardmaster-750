@@ -85,10 +85,9 @@ const kakaoClose = document.querySelector('#kakao-notice-close');
 let kakaoUrl = '';
 try {
   const candidate = new URL(config.kakaoChannelUrl);
-  if (candidate.protocol === 'https:' && candidate.hostname === 'pf.kakao.com' && !candidate.username && !candidate.password) kakaoUrl = candidate.href;
+  if (['http:', 'https:'].includes(candidate.protocol) && candidate.hostname === 'pf.kakao.com' && !candidate.username && !candidate.password) kakaoUrl = candidate.href;
 } catch { /* Channel URL is intentionally empty until the channel opens. */ }
 if (kakaoUrl) {
-  document.querySelector('#kakao-chat-state').textContent = '채팅으로 상담하기';
   kakaoButton.setAttribute('aria-label', '카카오톡 문의 — 새 창에서 열기');
   kakaoButton.removeAttribute('aria-controls');
   kakaoButton.removeAttribute('aria-expanded');

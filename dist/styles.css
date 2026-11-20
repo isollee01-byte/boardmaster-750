@@ -2,20 +2,22 @@
 .footer-business{max-width:780px;line-height:1.9;overflow-wrap:anywhere}
 .footer-business>strong{display:block;margin-bottom:10px}
 .footer-roles{margin-top:16px;padding-top:12px;border-top:1px solid #392d3f}
+.manufacturer-link{color:inherit;text-decoration:none}
+.manufacturer-link:hover,.manufacturer-link:focus-visible{text-decoration:underline;text-underline-offset:3px}
 .footer-bottom>span{white-space:nowrap}
 .brand,.brand strong,.brand small{background:transparent}
-.kakao-floating{position:fixed;right:24px;bottom:28px;z-index:40}
-.kakao-chat-button{display:flex;align-items:center;gap:10px;min-height:64px;padding:11px 20px 11px 14px;border:1px solid #e7d000;border-radius:32px;background:#fee500;color:#3c1e1e;box-shadow:0 5px 22px #231b2526;text-align:left;transition:transform .2s,box-shadow .2s}
-.kakao-chat-button:hover{transform:translateY(-3px);box-shadow:0 8px 26px #231b2533}
-.kakao-chat-button>span{font-size:14px;font-weight:750;line-height:1.4}
-.kakao-chat-button small{display:block;font-size:10px;font-weight:500;margin-top:3px}
-.kakao-chat-button svg{flex-shrink:0}
+.kakao-floating{position:fixed;right:24px;bottom:28px;z-index:40;display:flex;flex-direction:column-reverse;gap:8px}
+.floating-action{display:grid;place-items:center;width:48px;height:48px;padding:0;border:1px solid transparent;border-radius:50%;box-shadow:0 5px 22px #231b2526;transition:transform .2s,box-shadow .2s}
+.floating-action:hover{transform:translateY(-3px);box-shadow:0 8px 26px #231b2533}
+.floating-action:focus-visible{outline:2px solid var(--purple);outline-offset:3px}
+.phone-action{background:#137333;color:#fff}
+.kakao-chat-button{border-color:#e7d000;background:#fee500;color:#3c1e1e}
 .kakao-notice{position:absolute;right:0;bottom:calc(100% + 12px);width:280px;max-width:calc(100vw - 32px);padding:23px 20px 20px;border:1px solid var(--line);border-radius:12px;background:white;box-shadow:0 8px 35px #231b2526;color:var(--ink)}
 .kakao-notice>strong{display:block;font-size:15px;margin-bottom:12px;padding-right:24px}
 .kakao-notice>p{font-size:13px;font-weight:600;line-height:1.7}
 .kakao-notice>small{display:block;font-size:12px;line-height:1.8;color:var(--muted);margin-top:8px}
 .kakao-notice-close{position:absolute;top:10px;right:10px;display:grid;place-items:center;width:32px;height:32px;border:0;border-radius:50%;background:#f6f3f7;color:var(--ink);font-size:23px;line-height:1}
-@media(max-width:600px){.kakao-floating{right:14px;bottom:calc(76px + env(safe-area-inset-bottom))}.kakao-chat-button{min-height:56px;padding:8px 14px 8px 10px;gap:7px}.kakao-chat-button>span{font-size:12px}.kakao-chat-button svg{width:32px;height:32px}.kakao-chat-button small{font-size:9px}.kakao-notice{width:260px}}
+@media(max-width:600px){.kakao-floating{right:14px;bottom:calc(76px + env(safe-area-inset-bottom))}.kakao-notice{width:260px}}
 .document-actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
 .section-heading>p>a,.steps p>a,.faq-intro .muted>a{color:var(--purple);text-decoration:underline;text-underline-offset:3px}
 @media(max-width:600px){.document-actions{gap:14px}}
