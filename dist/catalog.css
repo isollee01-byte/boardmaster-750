@@ -24,8 +24,14 @@
 .catalog-header [aria-current], .catalog-categories a, .catalog-card a {
   color: #693168;
 }
-.catalog-header a:hover, .catalog-card a:hover {
+.catalog-header nav a:hover, .catalog-card a:hover {
   text-decoration: underline;
+}
+.catalog-header a.brand,
+.catalog-header a.brand:hover,
+.catalog-header a.brand:focus,
+.catalog-header a.brand:active {
+  text-decoration: none;
 }
 .catalog-intro {
   color: #fff;
