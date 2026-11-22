@@ -1,0 +1,54 @@
+.site-languages {
+  position: relative;
+  display: inline-flex;
+  flex: none;
+  height: 40px;
+  align-items: center;
+  gap: 5px;
+  padding-inline: 8px;
+  margin-inline-start: 8px;
+  border-radius: 20px;
+  color: #693168;
+}
+.site-language-label { font-size: .875rem; font-weight: 650; white-space: nowrap; }
+.site-languages:hover, .site-languages:focus-within { background: var(--purple-light); }
+.site-languages:focus-within { outline: 2px solid var(--purple); outline-offset: 2px; }
+.site-languages select {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.language-status {
+  position: absolute;
+  z-index: 1;
+  inset-inline-end: 0;
+  top: calc(100% + 4px);
+  width: max-content;
+  max-width: 70vw;
+  padding: 8px;
+  background: #fff;
+  border: 1px solid var(--line);
+  font-size: .875rem;
+}
+.catalog-header-inner nav { margin-inline-start: auto; }
+@media (min-width: 601px) {
+  html:not([lang="ko"]) .header nav {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    column-gap: clamp(10px, 1.5vw, 24px);
+    row-gap: 6px;
+    padding-inline-start: 12px;
+  }
+}
+[dir="rtl"] .kakao-floating { right: auto; left: 24px; }
+[dir="rtl"] .catalog-card p, [dir="rtl"] .privacy-policy p { text-align: start; }
+[dir="rtl"] .foam-gun-models { padding-left: 0; padding-right: 21px; }
+[dir="rtl"] input:is([type="tel"], [type="email"]) { direction: ltr; text-align: right; }
+@media (max-width: 600px) {
+  [dir="rtl"] .kakao-floating { right: auto; left: 14px; }
+  .header-inner > .menu-toggle { margin-inline-start: auto; }
+  .catalog-header-inner nav { order: 1; flex-basis: 100%; margin-inline-start: 0; }
+}
