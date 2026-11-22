@@ -76,37 +76,14 @@ navigation.querySelectorAll('a').forEach(link => link.addEventListener('click', 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeMenu(); menuButton.focus(); } });
 document.querySelectorAll('[data-inquiry]').forEach(link => link.addEventListener('click', () => { document.querySelector('[name="type"]').value = link.dataset.inquiry; }));
 const form = document.querySelector('#inquiry-form');
+const catalogProduct = new URLSearchParams(window.location.search).get('product')?.trim();
+if (catalogProduct && catalogProduct.length <= 100 && !form.elements.message.value) {
+  form.elements.type.value = '제품·시공 상담';
+  form.elements.message.value = `문의 제품: ${catalogProduct}\n\n`;
+}
 const status = document.querySelector('#form-status');
 const submitButton = form.querySelector('button[type="submit"]');
 const config = window.BOARDMASTER_CONFIG || {};
-const kakaoButton = document.querySelector('#kakao-chat-button');
-const kakaoNotice = document.querySelector('#kakao-chat-notice');
-const kakaoClose = document.querySelector('#kakao-notice-close');
-let kakaoUrl = '';
-try {
-  const candidate = new URL(config.kakaoChannelUrl);
-  if (['http:', 'https:'].includes(candidate.protocol) && candidate.hostname === 'pf.kakao.com' && !candidate.username && !candidate.password) kakaoUrl = candidate.href;
-} catch { /* Channel URL is intentionally empty until the channel opens. */ }
-if (kakaoUrl) {
-  kakaoButton.setAttribute('aria-label', '카카오톡 문의 — 새 창에서 열기');
-  kakaoButton.removeAttribute('aria-controls');
-  kakaoButton.removeAttribute('aria-expanded');
-}
-function closeKakaoNotice() {
-  kakaoNotice.hidden = true; kakaoButton.setAttribute('aria-expanded', 'false');
-}
-kakaoButton.addEventListener('click', () => {
-  if (kakaoUrl) { window.open(kakaoUrl, '_blank', 'noopener,noreferrer'); return; }
-  kakaoNotice.hidden = !kakaoNotice.hidden;
-  kakaoButton.setAttribute('aria-expanded', String(!kakaoNotice.hidden));
-});
-kakaoClose.addEventListener('click', () => { closeKakaoNotice(); kakaoButton.focus(); });
-document.addEventListener('keydown', event => {
-  if (event.key === 'Escape' && !kakaoNotice.hidden) { closeKakaoNotice(); kakaoButton.focus(); }
-});
-document.addEventListener('click', event => {
-  if (!kakaoNotice.hidden && !event.target.closest('.kakao-floating')) closeKakaoNotice();
-});
 const connected = Boolean(config.inquiryEndpoint && config.privacyApproved);
 if (connected) { document.querySelector('#form-notice').textContent = '제품 용도와 현장 조건을 남겨주세요. 담당자가 확인 후 연락드립니다.'; document.querySelector('#submit-label').textContent = '상담 문의 접수'; document.querySelector('#consent-row').hidden = false; form.elements.consent.required = true; }
 form.addEventListener('submit', async event => {

@@ -1,0 +1,8 @@
+.privacy-policy { max-width: 800px; }
+.privacy-policy h1 { margin: 0 0 20px; font-size: clamp(1.85rem, 5vw, 2.5rem); }
+.privacy-policy section { margin-top: 32px; }
+.privacy-policy h2 { margin: 0 0 12px; font-size: 1.25rem; }
+.privacy-policy p, .privacy-policy dd { margin: 0 0 10px; }
+.privacy-policy dt { margin: 12px 0 4px; font-weight: 700; }
+.privacy-policy a { color: #693168; text-decoration: underline; }
+.privacy-contact { display: flex; flex-wrap: wrap; gap: 6px 18px; }
