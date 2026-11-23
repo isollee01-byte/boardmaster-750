@@ -24,8 +24,27 @@
     kakaoButton.setAttribute('aria-expanded', String(!kakaoNotice.hidden));
   });
   kakaoClose.addEventListener('click', () => { closeKakaoNotice(); kakaoButton.focus(); });
+  const menuButton = document.querySelector('.menu-toggle');
+  const navigation = document.querySelector('#navigation');
+  function closeMenu() {
+    if (!menuButton || !navigation) return;
+    menuButton.setAttribute('aria-label', '메뉴 열기');
+    menuButton.setAttribute('aria-expanded', 'false');
+    navigation.classList.remove('open');
+  }
+  if (menuButton && navigation) {
+    menuButton.addEventListener('click', () => {
+      const open = menuButton.getAttribute('aria-expanded') !== 'true';
+      menuButton.setAttribute('aria-expanded', String(open));
+      menuButton.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+      navigation.classList.toggle('open', open);
+    });
+    navigation.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+  }
   document.addEventListener('keydown', event => {
-    if (event.key === 'Escape' && !kakaoNotice.hidden) { closeKakaoNotice(); kakaoButton.focus(); }
+    if (event.key !== 'Escape') return;
+    if (!kakaoNotice.hidden) { closeKakaoNotice(); kakaoButton.focus(); return; }
+    if (navigation?.classList.contains('open')) { closeMenu(); menuButton.focus(); }
   });
   document.addEventListener('click', event => {
     if (!kakaoNotice.hidden && !event.target.closest('.kakao-floating')) closeKakaoNotice();

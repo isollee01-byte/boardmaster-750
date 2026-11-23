@@ -14,13 +14,18 @@
 <link rel="stylesheet" href="localize.css"><script src="localize.js" defer></script></head>
 <body class="catalog-page">
 <a class="skip" href="#main">본문 바로가기</a>
-<header class="catalog-header">
-  <div class="container catalog-header-inner">
-    <a class="brand" href="index.html" aria-label="보드마스터 750 첫 화면"><strong>UNI<span>®</span></strong><div>BOARD MASTER<small>보드마스터 750</small></div></a>
-    <nav aria-label="주요 메뉴">
-      <a href="index.html">홈</a>
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand" aria-label="UNI 보드마스터 750 첫 화면"><strong>UNI<span>®</span></strong><div>BOARD MASTER<small>보드마스터 750</small></div></a>
+    <button class="menu-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="navigation"><span></span><span></span></button>
+    <nav id="navigation" aria-label="주요 메뉴">
+      <a href="index.html#product">제품 소개</a>
       <a href="products.html" aria-current="page">제품라인업</a>
-      <a href="index.html#contact">상담 문의</a>
+      <a href="index.html#application">적용 부위</a>
+      <a href="index.html#guide">시공 안내</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#resources">기술자료</a>
+      <a class="nav-cta" href="index.html#contact">상담 문의 <span>↗</span></a>
     </nav>
   <div class="site-languages"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.65" aria-hidden="true"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/></svg><span class="site-language-label" aria-hidden="true" translate="no" lang="en">Language</span><select aria-label="Language" id="site-language" translate="no">
       <option value="ko" lang="ko">한국어</option>

@@ -68,12 +68,6 @@ function filterResources() {
 resourceSearch.addEventListener('input', filterResources);
 resourceCategory.addEventListener('change', filterResources);
 loadResources();
-const menuButton = document.querySelector('.menu-toggle');
-const navigation = document.querySelector('#navigation');
-function closeMenu() { menuButton.setAttribute('aria-label', '메뉴 열기'); menuButton.setAttribute('aria-expanded', 'false'); navigation.classList.remove('open'); }
-menuButton.addEventListener('click', () => { const open = menuButton.getAttribute('aria-expanded') !== 'true'; menuButton.setAttribute('aria-expanded', String(open)); menuButton.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기'); navigation.classList.toggle('open', open); });
-navigation.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
-document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeMenu(); menuButton.focus(); } });
 document.querySelectorAll('[data-inquiry]').forEach(link => link.addEventListener('click', () => { document.querySelector('[name="type"]').value = link.dataset.inquiry; }));
 const form = document.querySelector('#inquiry-form');
 const catalogProduct = new URLSearchParams(window.location.search).get('product')?.trim();

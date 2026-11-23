@@ -1,16 +1,4 @@
-.catalog-header {
-  background: #fff;
-  border-bottom: 1px solid var(--line);
-}
-.catalog-header-inner {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px 24px;
-  padding-block: 16px;
-}
-.catalog-header nav, .catalog-categories {
+.catalog-categories {
   position: static;
   display: flex;
   flex-wrap: wrap;
@@ -21,17 +9,11 @@
   box-shadow: none;
   font-size: .9375rem;
 }
-.catalog-header [aria-current], .catalog-categories a, .catalog-card a {
+.catalog-categories a, .catalog-card a {
   color: #693168;
 }
-.catalog-header nav a:hover, .catalog-card a:hover {
+.catalog-card a:hover {
   text-decoration: underline;
-}
-.catalog-header a.brand,
-.catalog-header a.brand:hover,
-.catalog-header a.brand:focus,
-.catalog-header a.brand:active {
-  text-decoration: none;
 }
 .catalog-intro {
   color: #fff;
